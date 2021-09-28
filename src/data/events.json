@@ -13,8 +13,8 @@
       "name": "MediaDay Tulevaisuus Koodaus",
       "startTime": "15:00",
       "startDate": "21.9.2021",
-      "streamUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Wikipedia_Edit_2014.webm",
-      "streamVideoType": "video/webm"
+      "streamUrl": "http://195.148.104.124:1935/jakelu/toot/playlist.m3u8",
+      "streamVideoType": "application/x-mpegURL"
     },
     {
       "videoUrl": "opiskelupaiva",
