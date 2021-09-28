@@ -3,7 +3,7 @@ import './App.css';
 import { Switch, Route, Link } from "react-router-dom";
 import { Nav, Navbar } from 'react-bootstrap';
 
-import About from './pages/About'
+import AboutPage from './pages/AboutPage'
 import PromoVideo from './pages/PromoVideo';
 import EventPage from './pages/EventPage';
 import SchedulePage from './pages/SchedulePage';
@@ -50,7 +50,7 @@ function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/about">
-            <About name="Juha" />
+            <AboutPage name="Juha" />
           </Route>
           <Route path="/schedule">
             <SchedulePage />
@@ -81,3 +81,4 @@ function App() {
 }
 
 export default App;
+

@@ -1,8 +1,10 @@
+import './about.css';
+
 import React from 'react';
-import Hello from '../components/Hello/Hello';
+import Hello from '../Hello/Hello';
 
 const About = ({ name }) => (
-    <div>
+    <div className="about">
         <h2>About sivu, name propsina {name}</h2>
         <Hello />
     </div>
@@ -10,4 +12,3 @@ const About = ({ name }) => (
 
 
 export default About;
-

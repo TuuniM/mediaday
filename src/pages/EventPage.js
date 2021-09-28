@@ -2,6 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
 import Video from '../components/Video/Video';
+import WaitingForStream from '../components/WaitingForStream/WaitingForStream';
 
 import eventData from '../data/events.json';
 
@@ -10,7 +11,6 @@ const EventPage = () => {
 
     const eventResult = eventData.events.find(({ videoUrl }) =>
         videoUrl === id
-
     );
 
     if (!eventResult) {
@@ -19,7 +19,6 @@ const EventPage = () => {
 
     return (
         <div>
-
             <Container>
                 <Row>
                     <Col>
@@ -30,7 +29,14 @@ const EventPage = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={9}><Video url={eventResult.streamUrl} type={eventResult.streamVideoType} /></Col>
+                    <Col lg={9}>
+                        <WaitingForStream startDate={eventResult.startDate} startTime={eventResult.startTime}>
+                            {(streamHasStarted) => <>
+                                {streamHasStarted && <Video url={eventResult.streamUrl} type={eventResult.streamVideoType} />}
+                                {!streamHasStarted && <h2>Striimi alkaa joskus myöhemmin (countdown?)</h2>}
+                            </>}
+                        </WaitingForStream>
+                    </Col>
                     <Col>
                         Alkaa päivänä: {eventResult.startDate}
                         <br />
@@ -46,3 +52,5 @@ const EventPage = () => {
 }
 
 export default EventPage;
+
+
